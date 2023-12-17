@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Game vui vui.sln"
+    "dotnet.defaultSolution": "Funny Game.sln"
 }

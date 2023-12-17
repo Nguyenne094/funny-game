@@ -30,7 +30,7 @@ public class EggSpawner : MonoBehaviour
             else
                 _spawnRate = .5f;
             yield return new WaitForSeconds(_spawnRate);
-            spawnPos = new Vector3(Random.Range(-2.63f, 2.63f), 6f, 0);
+            spawnPos = new Vector3(Random.Range(-2.63f, 2.09f), 6f, 0);
             GameObject newEgg = Instantiate(eggPrefab, spawnPos, Quaternion.identity);
         }
     }

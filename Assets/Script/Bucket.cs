@@ -33,6 +33,7 @@ public class Bucket : MonoBehaviour
             transform.Translate(movement * speed * 1.5f * Time.deltaTime);
         else
             transform.Translate(movement * speed * 2f * Time.deltaTime);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x,-2.339f, 2.339f), transform.position.y, 0);
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,-2.3f, 1.79f), transform.position.y, 0);
     }
 }
