@@ -7,6 +7,15 @@ public class Bucket : MonoBehaviour
     public int score;
     [SerializeField] internal bool isGamerOver = false;
     [SerializeField] internal bool isWinGame = false;
+    [SerializeField] private Sprite bucket;
+    [SerializeField] private Sprite bucket1;
+    [SerializeField] private Sprite bucket2;
+    [SerializeField] private Sprite bucket3;
+    SpriteRenderer spriteRenderer;
+
+    private void Awake() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Start() {
         score = 0;
@@ -14,26 +23,39 @@ public class Bucket : MonoBehaviour
     }
 
     private void Update(){
-        Movement();
+        BucketUpdate();
         if(score < 0)
             isGamerOver = true;
-        if(score >= 30)
+        if(score >= 50)
             isWinGame = true;
     }
 
-    private void Movement()
+    private void BucketUpdate()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
 
         Vector3 movement = new Vector3(horizontalInput, 0f, 0f);
 
-        if(score < 10)
+        if(0 <= score && score < 10){
+            spriteRenderer.sprite = bucket;
             transform.Translate(movement * speed * Time.deltaTime);
-        else if(10 <= score && score < 20)
+        }
+
+        else if(10 <= score && score < 20){
+            spriteRenderer.sprite = bucket1;
             transform.Translate(movement * speed * 1.5f * Time.deltaTime);
-        else
+        }
+        else if(20 <= score && score < 30){
+            spriteRenderer.sprite = bucket2;
+            transform.Translate(movement * speed * 1.75f * Time.deltaTime);
+        }
+        else{
+            spriteRenderer.sprite = bucket3;
             transform.Translate(movement * speed * 2f * Time.deltaTime);
+        }
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x,-2.3f, 1.79f), transform.position.y, 0);
     }
+
+
 }

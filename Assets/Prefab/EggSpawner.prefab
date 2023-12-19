@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c314144854a3514c98ee993ba5c7430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eggPrefab: {fileID: 8983239727690545476, guid: 6b1d43bbf54db9142a8f776e19bb2996, type: 3}
+  eggPrefab: {fileID: 439300780310953211, guid: 46f14404581faee4890876dfe025a217, type: 3}
   spawnRate: 3

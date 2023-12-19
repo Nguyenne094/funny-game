@@ -27,7 +27,7 @@ public class SceneSetting : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     private IEnumerator LoadGamePlay(){
@@ -37,6 +37,6 @@ public class SceneSetting : MonoBehaviour
         
         yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

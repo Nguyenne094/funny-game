@@ -21,11 +21,11 @@ public class EggSpawner : MonoBehaviour
 
     private IEnumerator StartSpawing(float _spawnRate){
         while(isSpawing){
-            if(bucket.score >= 30)
+            if(bucket.score >= 50)
                 isSpawing = false;
             if(bucket.score < 10)
                 _spawnRate = 2f;
-            else if(bucket.score <= 10 && bucket.score < 20)
+            else if(bucket.score <= 10 && bucket.score < 30)
                 _spawnRate = 1f;
             else
                 _spawnRate = .5f;

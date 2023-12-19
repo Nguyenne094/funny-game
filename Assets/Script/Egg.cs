@@ -34,7 +34,7 @@ public class Egg : MonoBehaviour
     {
         if(bucket.score < 10)
             transform.Translate(Vector3.down * speedWave1 * Time.deltaTime);
-        else if(10 <= bucket.score && bucket.score < 20)
+        else if(10 <= bucket.score && bucket.score < 30)
             transform.Translate(Vector3.down * speedUpWave2 * Time.deltaTime);
         else
             transform.Translate(Vector3.down * speedUpWave3 * Time.deltaTime);
