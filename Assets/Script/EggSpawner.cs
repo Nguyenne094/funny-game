@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EggSpawner : MonoBehaviour
@@ -9,6 +8,8 @@ public class EggSpawner : MonoBehaviour
     private bool isSpawing = true;
     private Vector3 spawnPos;
     public float spawnRate = 1f;
+    public Factory[] factories;
+    private Factory factory;
 
     private void Awake() {
         bucket = FindObjectOfType<Bucket>().GetComponent<Bucket>();
@@ -31,7 +32,8 @@ public class EggSpawner : MonoBehaviour
                 _spawnRate = .5f;
             yield return new WaitForSeconds(_spawnRate);
             spawnPos = new Vector3(Random.Range(-2.63f, 2.09f), 6f, 0);
-            GameObject newEgg = Instantiate(eggPrefab, spawnPos, Quaternion.identity);
+            factory = factories[Random.Range(0, factories.Length)];
+            factory.CreateProduct(spawnPos);
         }
     }
 }
